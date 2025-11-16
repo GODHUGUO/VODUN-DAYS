@@ -90,7 +90,7 @@ Avec la déportation de certains Africains vers d'autres pays et continents, la 
   <p class="font-bold text-2xl  px-10  text-[#DD193A] text-center mt-4 mb-4 declancheurbloc3 ">Partenaires officiels </p>
 <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
   <div class="w-36 h-20  flex items-center justify-center rounded">
-    <img src="/images/celtiis.JPEG" alt="Image 1" class="w-full h-full object-contain">
+    <img src="/images/celt.JPEG" alt="Image 1" class="w-full h-full object-contain">
   </div>
   <div class="w-36 h-20  flex items-center justify-center rounded">
     <img src="/images/A+BENIN.PNG" alt="Image 2" class="w-full h-full object-contain">
