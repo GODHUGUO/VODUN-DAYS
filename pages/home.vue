@@ -2,7 +2,7 @@
   <div>
   
 <!-- -----------------herosection---------------- -->
-  <div class="relative h-screen bg-[url('/images/vd3.jpg')] bg-cover bg-center -mt-[64px] overflow-hidden bg-fixed  containhero" >
+  <div class="relative h-screen bg-[url('/images/vd3.webp')] bg-cover bg-center -mt-[64px] overflow-hidden bg-fixed  containhero" >
   
     <div class="absolute inset-0 bg-black/65"></div>
     <div class="absolute inset-0 bg-white overlay"></div>

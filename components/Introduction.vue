@@ -7,7 +7,7 @@
     <div class=" text-[#DD193A] flex flex-col items-center justify-center z-10">
       <div class="font-bold text-6xl textacc">BIENVENUE AU</div>
       <div class=" overflow-hidden">
-        <img src="/images/logo-festival.png " class="logovday " />
+        <img src="/images/logo-festival.webp " class="logovday " />
       </div>
       <button  class="bg-[#DD193A] mt-8  btn-pop px-8 py-2 rounded-lg text-white font-semibold" @click="closeIntro">
         Entrez ici

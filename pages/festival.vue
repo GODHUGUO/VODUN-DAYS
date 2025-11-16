@@ -1,6 +1,6 @@
 <template>
     <div>
-  <div class="relative h-screen bg-[url('/images/festival.jpg')] bg-cover bg-center -mt-[64px] overflow-hidden bg-fixed  containhero" >
+  <div class="relative h-screen bg-[url('/images/festival.webp')] bg-cover bg-center -mt-[64px] overflow-hidden bg-fixed  containhero" >
   
     <div class="absolute inset-0 bg-black/65"></div>
 

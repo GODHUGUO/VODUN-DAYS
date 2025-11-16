@@ -1,7 +1,7 @@
 <template>
     <div>
         
-  <div class="relative h-screen bg-[url('/images/Porte_du_non-retour_au_Benin.jpg')] bg-cover bg-center -mt-[64px] overflow-hidden bg-fixed  containhero" >
+  <div class="relative h-screen bg-[url('/images/portedunonretour.webp')] bg-cover bg-center -mt-[64px] overflow-hidden bg-fixed  containhero" >
   
     <div class="absolute inset-0 bg-black/65"></div>
 
