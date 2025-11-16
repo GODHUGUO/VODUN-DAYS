@@ -3,9 +3,9 @@
     <!-- Barre de navigation -->
     <nav class="flex justify-between items-center px-6 py-4">
     <!-- Logo -->
-    <div>
-      <img src="/images/logo-festival.png" alt="Logo Festival" class="logovday h-8" />
-    </div>
+     <NuxtLink to="/">
+    <img src="/images/logo-festival.png" alt="Logo Festival" class="logovday h-8" />
+  </NuxtLink>
     
     <!-- Hamburger bouton pour mobile -->
     <button
