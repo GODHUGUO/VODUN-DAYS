@@ -5,7 +5,9 @@
   <div class="relative h-screen bg-[url('/images/vd3.webp')] bg-cover bg-center -mt-[64px] overflow-hidden bg-fixed  containhero" >
   
     <div class="absolute inset-0 bg-black/65"></div>
-    <div class="absolute inset-0 bg-white overlay"></div>
+    <div class="absolute inset-0 bg-white overlay flex justify-center items-center z-50">
+  <div class="animate-spin rounded-full h-4 w-4 border-4 border-gray-300 border-t-blue-600"></div>
+</div>
 
 
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">

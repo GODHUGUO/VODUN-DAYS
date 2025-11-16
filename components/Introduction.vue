@@ -1,7 +1,7 @@
 <template>
   <div class="relative   w-full h-screen fixed flex items-center justify-center bg-[#1D1E22] overflow-hidden">
     
-    <div class="absolute inset-0 bg-[url('/images/bgcoris1.jpeg')] bg-cover bg-center opacity-5 overflow-y-hidden"></div>
+    <div class="absolute inset-0 bg-[url('/images/bgcoris1.webp')] bg-cover bg-center opacity-5 overflow-y-hidden"></div>
 
    
     <div class=" text-[#DD193A] flex flex-col items-center justify-center z-10 px-4">
