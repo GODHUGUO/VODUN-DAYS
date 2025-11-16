@@ -18,7 +18,7 @@
     </div>
   </div>
 
-<div class="px-14">
+<div class="px-6">
 
 <div class="text-justify">
             <p class="font-bold text-2xl  px-10  text-[#DD193A] text-center mt-4 mb-4 declancheurbloc2">Ce qu'il faut savoir sur  OUIDAH ? </p>
@@ -67,7 +67,7 @@ o	Hébergements disponibles : hôtels, auberges, résidences d'artistes, logemen
 </div>
 
 
-<div class="px-6 md:px-14 flex flex-col items-center">
+<div class="px-6 md:px-6 flex flex-col items-center">
   <p class="font-semibold text-center text-lg mb-8 mt-4 declancheur">Quelques images</p>
 
   <!-- Masonry grid -->

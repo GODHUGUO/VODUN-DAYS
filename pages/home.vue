@@ -18,8 +18,8 @@
 
   <!-- ---------------------Présentation---------------- -->
   <div class=" overflow-hidden ">
-<p class="font-bold text-2xl  px-10  text-[#DD193A] text-center mt-4 mb-4 declancheurbloc1">Qu'est ce que le VODUN DAYS ?</p>
-<div class="flex flex-col md:flex-row px-14 gap-10 mb-10 ">
+<p class="font-bold text-2xl  px-6  text-[#DD193A] text-center mt-4 mb-4 declancheurbloc1">Qu'est ce que le VODUN DAYS ?</p>
+<div class="flex flex-col md:flex-row px-6 gap-10 mb-10 ">
 <div class="relative">
   <img src="/images/TALON.jpg " class="logovday " />
  <div class="absolute h-[100%] w-[100%] bg-white top-0 blocpresident"></div>
@@ -35,16 +35,16 @@
   </div>
 
 <!-- --------------------------section2------------------- -->
-<div class="px-14 text-justify">
+<div class="px-6 text-justify">
   <p class="font-bold text-2xl  px-10  text-[#DD193A] text-center mt-4 mb-4 declancheurbloc1  text-section">Origine du VODUN.  </p>
 
 
 <div>
  <p  class="mb-4  text-reveal  "> Le <span class="text-[#DD193A] font-bold"><span class="text-[#DD193A] font-bold">vaudou</span></span>  est né de la rencontre des cultes traditionnels des dieux yorubas et des divinités akans : Aja, fon et ewe, lors de la création puis l'expansion du royaume Fon d'Abomey aux XVIIe et XVIIIe siècles. <br><br>
 
-Le <span class="text-[#DD193A] font-bold"><span class="text-[#DD193A] font-bold">vaudou</span></span> est le fondement culturel des peuples qui sont issus par migrations successives de Tado au Togo, les Aja (dont les Fons, les Gouns, les Ewe… et dans une certaine mesure les Yoruba…) peuples qui constituent un élément important des populations au sud des États du Golfe du Bénin (Bénin, Togo, Ghana, Nigéria…).<br><br>
+Le <span class="text-[#DD193A] font-bold"><span class="text-[#DD193A] font-bold">vaudou</span></span> est le fondement culturel des peuples qui sont issus par migrations successives de Tado au Togo, les Aja (dont les Fons, les Gouns, les Ewe… et dans une certaine mesure les Yoruba…) peuples qui constituent un élément important des populations au sud des États du Golfe du Bénin  <br>(Bénin, Togo, Ghana, Nigéria…).<br><br>
 
-Le mot <span class="text-[#DD193A] font-bold">vaudou</span> provient du terme vodoun de langue fon. Le « n » final de vodoun, quasi inaudible, fut retiré, donnant ainsi le terme <span class="text-[#DD193A] font-bold">vaudou</span>, ayant plusieurs orthographes selon les pays en fonction de ce que les colons ont phonétiquement rapporté. Le terme <span class="text-[#DD193A] font-bold">vaudou</span> n'existe d'ailleurs pas au Bénin et c'est bien le terme de langue fon qui est employé pour désigner cette pratique. Le <span class="text-[#DD193A] font-bold">vaudou</span> désigne l'ensemble des dieux ou des forces invisibles dont les hommes essaient de se concilier la puissance ou la bienveillance. Il est l'affirmation d'un monde surnaturel, mais aussi l'ensemble des procédures permettant d'entrer en relation avec celui-ci. Le <span class="text-[#DD193A] font-bold">vaudou</span> correspond au culte yoruba des Orishas. De même que le <span class="text-[#DD193A] font-bold">vaudou</span> est un culte à l'esprit du monde de l'invisible. À chaque ouverture, le prêtre vodoun demande l'aide de l'esprit de Papa Legba pour ouvrir les portes des deux mondes.<br><br>
+Le mot <span class="text-[#DD193A] font-bold">vaudou</span> provient du terme vodoun de langue fon. Le « n » final de vodoun, quasi inaudible, fut retiré, donnant ainsi le terme <span class="text-[#DD193A] font-bold">vaudou</span>, ayant plusieurs orthographes selon les pays en fonction de ce que les colons ont phonétiquement rapporté. Le terme <span class="text-[#DD193A] font-bold">vaudou</span> n'existe d'ailleurs pas au <br> Bénin et c'est bien le terme de langue fon qui est employé pour désigner cette pratique. Le <span class="text-[#DD193A] font-bold">vaudou</span> désigne l'ensemble des dieux ou des forces invisibles dont les hommes essaient de se concilier la puissance ou la bienveillance. Il est l'affirmation d'un monde surnaturel, mais aussi l'ensemble des procédures permettant d'entrer en relation avec celui-ci. Le <span class="text-[#DD193A] font-bold">vaudou</span> correspond au culte yoruba des Orishas. De même que le <span class="text-[#DD193A] font-bold">vaudou</span> est un culte à l'esprit du monde de l'invisible. À chaque ouverture, le prêtre vodoun demande l'aide de l'esprit de Papa Legba pour ouvrir les portes des deux mondes.<br><br>
 
 Le <span class="text-[#DD193A] font-bold">vaudou</span> vient des croyances de certaines tribus/castes africaines qui se sont répandues et déformées par l'acculturation d'un christianisme dominant en Amérique et la violence de l'esclavagisme négrier, croyances qui étaient d'ailleurs elles-mêmes rejetées à l'origine par d'autres tribus/castes africaines voisines : il s'agit d'une « magie » se voulant maléfique et, en Afrique, cachée, car représentant des « valeurs décadentes » pour la majorité des Africains bien avant l'arrivée des Européens. <br><br>
 
@@ -58,7 +58,7 @@ Avec la déportation de certains Africains vers d'autres pays et continents, la 
 
 </div>
 
-<div class="px-12">
+<div class="px-6">
 <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 p-4">
   <img 
     v-for="(img, index) in images" 
@@ -78,7 +78,7 @@ Avec la déportation de certains Africains vers d'autres pays et continents, la 
 </div>
 
 
-<div class="px-14 overflow-hidden">
+<div class="px-6 overflow-hidden">
   <p class="font-bold text-2xl  px-10  text-[#DD193A] text-center mt-4 mb-4 declancheurbloc2">Pourquoi une journée VODUN ? </p>
   <p class="text-justify textdeclancheurbloc2">
     Pendant longtemps, le Vodun a été stigmatisé et assimilé à la sorcellerie. Cependant, en 1992 (officiellement 1991 selon certaines archives), l’État béninois a reconnu le Vodun comme une religion officielle. La même année, sous l’initiative du président Nicéphore Soglo, le 10 janvier est déclaré Journée Nationale des Religions Traditionnelles, devenant ainsi un symbole de reconnaissance culturelle, de fierté identitaire, de retour aux racines et de réconciliation avec l’histoire. À Ouidah, considérée comme la capitale spirituelle du Vodun, cette journée est marquée par des processions et danses sacrées, des chants rituels, la sortie des Egungun et Zangbeto, l’apparition du Dan (serpent sacré), ainsi que des cérémonies sur la plage de la Porte du Non-Retour. C’est aussi un moment de communion et de célébration avec de la gastronomie locale, des animations sur les places emblématiques, des concerts, des performances artistiques, la Grande Cérémonie Vodun, des festivités au sein de l’Arène de Ouidah, un village dédié aux festivités et de nombreuses autres surprises.
@@ -86,9 +86,10 @@ Avec la déportation de certains Africains vers d'autres pays et continents, la 
   </p>
 </div>
 
-<div class="px-14 overflow-hidden">
+<div class="px-6 overflow-hidden">
   <p class="font-bold text-2xl  px-10  text-[#DD193A] text-center mt-4 mb-4 declancheurbloc3 ">Partenaires officiels </p>
-<div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 place-items-center">
+
   <div class="w-36 h-20  flex items-center justify-center rounded">
     <img src="/images/celt.jpeg" alt="Image 1" class="w-full h-full object-contain">
   </div>
@@ -149,7 +150,7 @@ definePageMeta({
 onMounted(() => {
   const tl = gsap.timeline({ease:"Power1.easeInOut"})
   tl.to(".overlay",{
-    duration:3,
+    duration:2,
     y:"100%"
   })
 })

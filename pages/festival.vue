@@ -17,7 +17,7 @@
     </div>
   </div>
 
-<div class="px-14 text-justify">
+<div class="px-6 text-justify">
   <p class="font-bold text-2xl  px-10  text-[#DD193A] text-center mt-4 mb-4 declancheurbloc2">VODUN DAYS Festival </p>
 <div>
     Le  festival de VODUN DAYS est un événement culturel majeur qui se tient chaque année à Ouidah, au cœur de l’Arène Culturelle spécialement aménagée pour accueillir cérémonies, performances et rencontres artistiques.
@@ -46,7 +46,7 @@ Elle devient, durant le festival, un pont entre tradition et modernité, où le 
 
 <div class="flex flex-col items-center md:flex-row gap-10">
 
-<div class="w-96">
+<div class="w-96 px-4">
    <img src="/images/sagbohan.jpg" class=" object-cover rounded-lg"  /> 
 </div>
 

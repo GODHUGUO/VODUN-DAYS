@@ -6,7 +6,7 @@
 
 <div class=""> <img src="/images/logo-festival.png " class="h-8" /></div>
 
- <p class="text-white mt-4 mb-4"> Pour plus d'informations, ainsi que du contenu en images et en vidéos : </p>
+ <p class="text-white mt-4 mb-4 text-center"> Pour plus d'informations, ainsi que du contenu en images et en vidéos : </p>
 
 <div>
     <p class="flex gap-4 mt-2">
