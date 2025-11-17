@@ -52,7 +52,7 @@
           class="menu-item box flex items-center gap-2 "
         >
          
-          <NuxtLink :to="item.link" class="bg-gray-100 w-full px-4 py-1 ">{{ item.name }}</NuxtLink>
+          <NuxtLink :to="item.link" class="bg-gray-200 w-full px-4 py-1 ">{{ item.name }}</NuxtLink>
         </li> 
       </ul>
     </transition>
