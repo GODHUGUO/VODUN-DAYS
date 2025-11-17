@@ -44,16 +44,16 @@
     <transition name="fade">
       <ul
         v-show="isOpen"
-        class="flex flex-col items-center gap-4 absolute w-full top-14 py-4 bg-white shadow-md md:hidden font-medium text-gray-800"
+        class="flex flex-col items-center gap-4  absolute w-full top-14 py-4 bg-white shadow-md md:hidden font-medium text-gray-800"
       >
         <li
           v-for="item in menuItems"
           :key="item.name"
-          class="menu-item box flex items-center gap-2 cursor-pointer"
+          class="menu-item box flex items-center gap-2 "
         >
          
-          <NuxtLink :to="item.link">{{ item.name }}</NuxtLink>
-        </li>
+          <NuxtLink :to="item.link" class="bg-gray-100 w-full px-4 py-1 ">{{ item.name }}</NuxtLink>
+        </li> 
       </ul>
     </transition>
   </div>
