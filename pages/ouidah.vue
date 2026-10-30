@@ -1,7 +1,7 @@
 <template>
     <div ref="root">
 
-  <div class="relative h-screen bg-[url('/images/portedunonretour.webp')] bg-cover bg-center -mt-[64px] overflow-hidden bg-fixed  containhero" >
+  <div class="relative h-screen h-svh bg-[url('/images/la%20version%20hd.webp')] bg-cover bg-center -mt-[64px] overflow-hidden lg:bg-fixed  containhero" >
 
     <div class="absolute inset-0 bg-black/65"></div>
 
@@ -94,6 +94,8 @@
                 v-for="img in step.images"
                 :key="img.src"
                 :src="img.src"
+                :srcset="srcsetOf(img.src, img.width)"
+                sizes="(min-width: 768px) 480px, 70vw"
                 :alt="step.title"
                 loading="lazy"
                 class="min-w-0 w-full object-cover rounded-xl"
@@ -124,7 +126,7 @@
     <div class="grid md:grid-cols-2 gap-6 reveal-group">
       <article v-for="place in places" :key="place.title" class="group rounded-2xl overflow-hidden bg-[#F8F3EC]">
         <div class="overflow-hidden">
-          <img :src="place.src" :alt="place.title" loading="lazy" class="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-105" />
+          <img :src="place.src" :srcset="srcsetOf(place.src, place.width)" sizes="(min-width: 768px) 50vw, 100vw" :alt="place.title" loading="lazy" class="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-105" />
         </div>
         <div class="p-6">
           <h3 class="font-display uppercase text-2xl text-[#1D1E22]">{{ place.title }}</h3>
@@ -133,7 +135,7 @@
       </article>
 
       <article class="md:col-span-2 rounded-2xl overflow-hidden bg-[#1D1E22] text-white grid md:grid-cols-5 items-center">
-        <img :src="beachImage" alt="La plage de Ouidah" width="2560" height="1146" loading="lazy" class="md:col-span-3 w-full h-auto" />
+        <img :src="beachImage" :srcset="srcsetOf(beachImage, 1920)" sizes="(min-width: 768px) 60vw, 100vw" alt="La plage de Ouidah" width="2560" height="1146" loading="lazy" class="md:col-span-3 w-full h-auto" />
         <div class="md:col-span-2 p-6 md:p-8">
           <h3 class="font-display uppercase text-2xl md:text-3xl">La plage de Ouidah</h3>
           <p class="text-white/75 mt-2 leading-relaxed">
@@ -178,7 +180,7 @@
 
 <CtaBand
   title="Vivez le Vodun Days"
-  text="Trois jours de célébration, chaque 8, 9 et 10 janvier, au cœur de la capitale spirituelle du Vodun."
+  text="Une semaine de célébration, du 2 au 9 janvier 2027, au cœur de la capitale spirituelle du Vodun."
   :primary="{ label: 'Découvrir le festival', to: '/festival' }"
   :secondary="{ label: 'Retour à l\'accueil', to: '/home' }"
 />
@@ -206,8 +208,8 @@ onMounted(() => {
   tl.to(".overlay", {
     yPercent: 100,       // chaque bande part du haut
     opacity: 0,           // commence invisible
-    duration: 2,        // durée de chaque animation
-    stagger: 0.3,         // délai entre chaque bande
+    duration: 0.8,      // durée de chaque animation
+    stagger: 0.1,         // délai entre chaque bande
     ease: "power3.out"    // effet fluide
   })
 })
@@ -229,58 +231,60 @@ const yearRound = [
   'Rencontres artistiques et culturelles',
 ]
 
-// ratio = largeur / hauteur de chaque image (les noms avec accents sont encodés)
+// ratio = largeur / hauteur de chaque image, width = largeur en pixels (les noms avec accents sont encodés)
 const route = [
   {
     title: 'La Place des enchères',
     text: "Point de départ de la route. C'est ici que les captifs étaient vendus ou échangés contre des marchandises.",
-    images: [{ src: '/images/Place-des-enche%CC%80res-Ouidah-Be%CC%81nin.jpg', ratio: 0.752 }],
+    images: [{ src: '/images/Place-des-enche%CC%80res-Ouidah-Be%CC%81nin.webp', ratio: 0.752, width: 910 }],
   },
   {
     title: "L'Arbre de l'Oubli",
     text: 'Les captifs devaient en faire le tour, les hommes neuf fois, les femmes sept fois, pour oublier leur nom, leur histoire et leurs origines.',
-    images: [{ src: '/images/Arbre-oubli-Ouidah-Be%CC%81nin.jpg', ratio: 0.773 }],
+    images: [{ src: '/images/Arbre-oubli-Ouidah-Be%CC%81nin.webp', ratio: 0.773, width: 935 }],
   },
   {
     title: 'Les Cases Zomaï',
     text: "Leur nom signifie « là où la lumière ne va pas » : les captifs y étaient enfermés dans l'obscurité totale avant le départ.",
     images: [
-      { src: '/images/Casa-Zomai%CC%88.jpg', ratio: 1.676 },
-      { src: '/images/Benin_Ouidah_Entrepot-768x1024.jpg', ratio: 0.75 },
+      { src: '/images/Casa-Zomai%CC%88.webp', ratio: 1.676, width: 1920 },
+      { src: '/images/Benin_Ouidah_Entrepot-768x1024.webp', ratio: 0.75, width: 768 },
     ],
   },
   {
     title: 'Le Mémorial du Souvenir',
     text: "Élevé à Zoungbodji, sur le site d'une fosse commune où reposent les captifs morts avant l'embarquement.",
-    images: [{ src: '/images/Memorial-Souvenir-Ouidah-Be%CC%81nin.jpg', ratio: 2.114 }],
+    images: [{ src: '/images/Memorial-Souvenir-Ouidah-Be%CC%81nin.webp', ratio: 2.114, width: 1858 }],
   },
   {
     title: "L'Arbre du Retour",
     text: 'En en faisant le tour, les captifs espéraient que leur âme reviendrait un jour sur la terre de leurs ancêtres.',
-    images: [{ src: '/images/Arbre-du-Retour-Ouidah-Be%CC%81nin.jpg', ratio: 0.75 }],
+    images: [{ src: '/images/Arbre-du-Retour-Ouidah-Be%CC%81nin.webp', ratio: 0.75, width: 900 }],
   },
   {
     title: 'La Porte du Non-Retour',
     text: "Face à l'océan, elle marque le dernier point foulé par les captifs sur la terre africaine. Un lieu de mémoire majeur, où se tiennent des cérémonies du Vodun Days.",
-    images: [{ src: '/images/portedunonretour.webp', ratio: 1.779 }],
+    images: [{ src: '/images/la%20version%20hd.webp', ratio: 1.703, width: 1335 }],
   },
 ]
 
 const ratioSum = (images) => images.reduce((sum, img) => sum + img.ratio, 0)
 
 // Chemin encodé dans le script : écrit en dur dans le template, Vue décode l'accent et l'image ne se charge plus
-const beachImage = '/images/Plage-Ouidah-Be%CC%81nin-1.jpg'
+const beachImage = '/images/Plage-Ouidah-Be%CC%81nin-1.webp'
 
 const places = [
   {
     title: 'Le Temple des Pythons',
     text: 'Un lieu spirituel majeur, symbole du lien entre humains et divinités, où les pythons sont respectés et honorés.',
-    src: '/images/Le_Temple_des_Pythons_a_Ouidah.jpg',
+    src: '/images/Le_Temple_des_Pythons_a_Ouidah.webp',
+    width: 1280,
   },
   {
     title: 'Le Fort Portugais',
     text: "Ancienne forteresse coloniale devenue Musée d'Histoire, il retrace l'histoire d'Ouidah, ses royaumes, ses traditions et sa place dans le monde.",
-    src: '/images/Fort%20Portugais%20DSC02169.jpg',
+    src: '/images/Fort%20Portugais%20DSC02169.webp',
+    width: 1600,
   },
 ]
 

@@ -6,9 +6,9 @@
 
   <!-- Logo + accroche -->
   <div class="flex flex-col items-center md:items-start">
-    <img src="/images/logo-festival.png" alt="Logo Vodun Days" class="h-8" />
+    <img src="/images/logo-festival-petit.webp" alt="Logo Vodun Days" class="h-8" />
     <p class="mt-4 text-sm text-white/70 max-w-xs">
-      Chaque 8, 9 et 10 janvier, Ouidah célèbre le Vodun, patrimoine vivant du Bénin.
+      Du 2 au 9 janvier 2027, Ouidah célèbre le Vodun, patrimoine vivant du Bénin.
     </p>
   </div>
 
@@ -26,34 +26,34 @@
   <div>
     <p class="font-semibold uppercase tracking-widest text-xs text-[#FFBE00] mb-4">Suivez-nous</p>
     <p class="text-sm text-white/70 mb-4">Pour plus d'informations, ainsi que du contenu en images et en vidéos :</p>
-    <p class="flex gap-4 justify-center md:justify-start">
+    <p class="flex gap-1 justify-center md:justify-start md:-ml-1.5">
 
 <a  href="https://web.facebook.com/vodundays?mibextid=LQQJ4d&_rdc=1&_rdr" target="_blank" rel="noopener" aria-label="Facebook"
- class="inline-block transition-transform duration-300 hover:scale-110"
+ class="flex h-11 w-11 items-center justify-center transition-transform duration-300 hover:scale-110"
 >
-  <img src="/images/logofb.png" alt="Facebook" class="h-8" />
+  <img src="/images/logofb.webp" alt="Facebook" class="h-8" />
 </a>
 
 <a  href="https://www.instagram.com/vodundays/" target="_blank" rel="noopener" aria-label="Instagram"
- class="inline-block transition-transform duration-300 hover:scale-110"
+ class="flex h-11 w-11 items-center justify-center transition-transform duration-300 hover:scale-110"
 >
-        <img src="/images/logoinsta.png" alt="Instagram" class="h-8" />
+        <img src="/images/logoinsta.webp" alt="Instagram" class="h-8" />
 </a>
 
 <a  href="https://www.youtube.com/playlist?list=PL6nGRnf5v3jg5ByAAlBgMpCKWi743C2HC" target="_blank" rel="noopener" aria-label="YouTube"
- class="inline-block transition-transform duration-300 hover:scale-110"
+ class="flex h-11 w-11 items-center justify-center transition-transform duration-300 hover:scale-110"
 >
-        <img src="/images/logoyoutube.png" alt="YouTube" class="h-8" />
+        <img src="/images/logoyoutube.webp" alt="YouTube" class="h-8" />
 </a>
 
 <a  href="https://www.tiktok.com/@vodundays" target="_blank" rel="noopener" aria-label="TikTok"
- class="inline-block transition-transform duration-300 hover:scale-110"
+ class="flex h-11 w-11 items-center justify-center transition-transform duration-300 hover:scale-110"
 >
-        <img src="/images/logotiktok.png" alt="TikTok" class="h-8" />
+        <img src="/images/logotiktok.webp" alt="TikTok" class="h-8" />
 </a>
 
 <a  href="https://x.com/vodundays" target="_blank" rel="noopener" aria-label="X"
- class="inline-block transition-transform duration-300 hover:scale-110"
+ class="flex h-11 w-11 items-center justify-center transition-transform duration-300 hover:scale-110"
 >
         <img src="/images/twitter-x-logo.png" alt="X" class="h-8" />
 </a>
@@ -63,11 +63,11 @@
 </div>
 
 <div class="border-t border-white/10">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row gap-2 justify-between items-center text-xs text-white/60">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row gap-2 justify-between items-center text-center text-xs text-white/60">
     <p>Copyright © {{ year }} Vodun Days</p>
     <p>
       Email du développeur :
-      <a href="mailto:jeanhuguesgodonou@gmail.com" class="text-[#DD193A] hover:underline">jeanhuguesgodonou@gmail.com</a>
+      <a href="mailto:jeanhuguesgodonou@gmail.com" class="text-[#FFBE00] hover:underline">jeanhuguesgodonou@gmail.com</a>
     </p>
   </div>
 </div>

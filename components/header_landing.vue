@@ -1,5 +1,6 @@
 <template>
   <div
+    ref="header"
     :class="[
       'font-poppins sticky top-0 z-50 transition-colors duration-300',
       scrolled || isOpen ? 'bg-[#1D1E22]/95 backdrop-blur shadow-lg' : 'bg-transparent'
@@ -11,14 +12,16 @@
     <!-- Logo -->
      <!-- /home et non / : "/" réaffiche l'écran d'accueil -->
      <NuxtLink to="/home">
-    <img src="/images/logo-festival.png" alt="Logo Vodun Days" class="logovday h-8" />
+    <img src="/images/logo-festival-petit.webp" alt="Logo Vodun Days" class="logovday h-8" />
   </NuxtLink>
 
     <!-- Hamburger bouton pour mobile -->
     <button
-      class="md:hidden focus:outline-none"
+      class="md:hidden -mr-2.5 flex h-11 w-11 items-center justify-center rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
       @click="isOpen = !isOpen"
-      aria-label="Menu"
+      :aria-label="isOpen ? 'Fermer le menu' : 'Ouvrir le menu'"
+      :aria-expanded="isOpen"
+      aria-controls="menu-mobile"
     >
       <i v-if="!isOpen" class="ti ti-menu text-2xl text-white"></i>
       <i v-else class="ti ti-x text-2xl text-white"></i>
@@ -58,6 +61,7 @@
     <!-- Menu mobile déroulant -->
     <transition name="fade">
       <ul
+        id="menu-mobile"
         v-show="isOpen"
         class="mobile-menu flex flex-col gap-1 absolute w-full top-full px-6 pb-6 pt-2 bg-[#1D1E22]/95 backdrop-blur shadow-lg md:hidden font-medium text-white"
       >
@@ -117,31 +121,45 @@ watch(() => route.fullPath, () => {
   isOpen.value = false
 })
 
+// Referme le menu mobile en touchant à côté ou avec la touche Échap
+const header = ref(null)
+function onDocumentClick(event) {
+  // composedPath et non contains : l'icône du bouton est déjà remplacée quand le clic arrive ici
+  if (isOpen.value && !event.composedPath().includes(header.value)) isOpen.value = false
+}
+function onKeydown(event) {
+  if (event.key === 'Escape') isOpen.value = false
+}
+
 // Animation GSAP
 onMounted(() => {
   onScroll()
   window.addEventListener('scroll', onScroll, { passive: true })
+  document.addEventListener('click', onDocumentClick)
+  window.addEventListener('keydown', onKeydown)
 
   // Animation des items du menu
   gsap.from(".box", {
     y: -50,
     opacity: 0,
-    duration: 1,
-    stagger: 0.2,
+    duration: 0.6,
+    stagger: 0.1,
     ease: "power2.out",
-    delay: 0.5
+    delay: 0.2
   })
     // Animation du logo
   gsap.from(".logovday", {
     x: -100,
     opacity: 0,
-    duration: 2,
+    duration: 1,
     ease: "power2.out"
   })
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', onScroll)
+  document.removeEventListener('click', onDocumentClick)
+  window.removeEventListener('keydown', onKeydown)
 })
 
 watch(isOpen, async (newVal) => {

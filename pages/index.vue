@@ -20,6 +20,11 @@ const router = useRouter()
 //   layout: 'site'
 // })
 
+useSeoMeta({
+  title: 'Vodun Days · Du 2 au 9 janvier 2027 à Ouidah',
+  description: "Vodun Days, la célébration culturelle et spirituelle du Vodun, du 2 au 9 janvier 2027 à Ouidah, au Bénin.",
+})
+
 const showIntro = ref(true)
 function goToSite() {
   showIntro.value = false

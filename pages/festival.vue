@@ -1,6 +1,6 @@
 <template>
     <div ref="root">
-  <div class="relative h-screen bg-[url('/images/festival.webp')] bg-cover bg-center -mt-[64px] overflow-hidden bg-fixed  containhero" >
+  <div class="relative h-screen h-svh bg-[url('/images/festival.webp')] bg-cover bg-center -mt-[64px] overflow-hidden lg:bg-fixed  containhero" >
 
     <div class="absolute inset-0 bg-black/65"></div>
 
@@ -24,7 +24,7 @@
     <div class="md:col-span-3 reveal">
       <SectionTitle eyebrow="Le festival" title="Vodun Days Festival" />
       <p class="text-lg text-gray-700 leading-relaxed">
-        Le festival Vodun Days est un événement culturel majeur qui se tient chaque année à Ouidah, au cœur de l'Arène culturelle spécialement aménagée pour accueillir cérémonies, performances et rencontres artistiques.
+        Le festival Vodun Days est un événement culturel majeur qui se tient chaque année à Ouidah, entre l'Arène culturelle, qui accueille les cérémonies, et l'espace aménagé sur la plage pour les concerts.
       </p>
     </div>
 
@@ -50,7 +50,7 @@
   <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
     <div class="reveal relative isolate">
       <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-[#108757] rounded-2xl -z-10"></div>
-      <img src="/images/54284765010_e1a485950b_h.jpg" alt="Vue aérienne de l'Arène de Ouidah, face à l'océan" width="1600" height="941" class="w-full rounded-2xl shadow-xl" />
+      <img src="/images/54284765010_e1a485950b_h.webp" :srcset="srcsetOf('/images/54284765010_e1a485950b_h.webp', 1600)" sizes="(min-width: 768px) 50vw, 100vw" loading="lazy" alt="Vue aérienne de l'Arène de Ouidah, face à l'océan" width="1600" height="941" class="w-full rounded-2xl shadow-xl" />
     </div>
 
     <div class="reveal">
@@ -76,7 +76,7 @@
 <section class="bg-[#1D1E22] text-white py-12 md:py-16">
   <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-5 gap-12 items-center">
     <div class="md:col-span-2 reveal">
-      <img src="/images/sagbohan.jpg" alt="Sagbohan Danialou en concert au Vodun Days" width="1440" height="1798" class="w-full max-w-sm mx-auto rounded-2xl shadow-2xl" />
+      <img src="/images/sagbohan.webp" :srcset="srcsetOf('/images/sagbohan.webp', 1440)" sizes="(min-width: 768px) 384px, 100vw" loading="lazy" alt="Sagbohan Danialou en concert au Vodun Days" width="1440" height="1798" class="w-full max-w-sm mx-auto rounded-2xl shadow-2xl" />
     </div>
 
     <div class="md:col-span-3 reveal">
@@ -96,6 +96,24 @@
         Cette diversité crée un mélange puissant, où chacun se retrouve autour d'une même célébration.
       </p>
     </div>
+  </div>
+</section>
+
+
+<!-- ---------------------Galerie des artistes---------------- -->
+<section class="bg-[#1D1E22] text-white pb-12 md:pb-16">
+  <div class="max-w-6xl mx-auto px-6 pt-12 md:pt-16 border-t border-white/10">
+    <div class="reveal">
+      <SectionTitle
+        eyebrow="Quelques images"
+        title="Ils ont fait vibrer la plage de Ouidah"
+        intro="Voix, percussions et chorégraphies : retour en images sur les artistes passés par la scène du Vodun Days."
+        dark
+        center
+      />
+    </div>
+
+    <PhotoGallery :gallery="festivalGallery" dark class="reveal" />
   </div>
 </section>
 
@@ -123,7 +141,7 @@
         href="https://www.youtube.com/playlist?list=PL6nGRnf5v3jg5ByAAlBgMpCKWi743C2HC"
         target="_blank"
         rel="noopener"
-        class="inline-flex items-center gap-2 font-semibold text-[#DD193A] hover:gap-3 transition-all"
+        class="inline-flex items-center gap-2 py-2 font-semibold text-[#DD193A] hover:gap-3 transition-all"
       >
         <i class="ti ti-brand-youtube text-xl"></i> Voir toutes les vidéos sur YouTube
       </a>
@@ -149,7 +167,7 @@ definePageMeta({
 
 useSeoMeta({
   title: 'Le Festival · Vodun Days',
-  description: "Le festival Vodun Days à l'Arène de Ouidah : cérémonies, danses rituelles, concerts et artistes venus du Bénin et du monde.",
+  description: "Le festival Vodun Days à Ouidah : cérémonies et danses rituelles à l'Arène, concerts sur la plage, avec des artistes venus du Bénin et du monde.",
 })
 
 import { gsap } from 'gsap'
@@ -161,8 +179,8 @@ onMounted(() => {
   tl.to(".overlay", {
     xPercent: 100,       // chaque bande part du haut
     opacity: 0,           // commence invisible
-    duration: 2,        // durée de chaque animation
-    stagger: 0.3,         // délai entre chaque bande
+    duration: 0.8,      // durée de chaque animation
+    stagger: 0.1,         // délai entre chaque bande
     ease: "power3.out"    // effet fluide
   })
 })
@@ -172,8 +190,8 @@ const root = ref(null)
 useReveal(root)
 
 const keyInfos = [
-  { icon: 'ti-calendar-event', text: '8, 9 et 10 janvier' },
-  { icon: 'ti-building-arch', text: "L'Arène de Ouidah" },
+  { icon: 'ti-calendar-event', text: 'Du 2 au 9 janvier 2027' },
+  { icon: 'ti-building-arch', text: "L'Arène et la plage de Ouidah" },
   { icon: 'ti-world', text: 'Artistes du Bénin et du monde' },
 ]
 

@@ -1,15 +1,15 @@
 <template>
-  <div ref="root" class="relative w-full min-h-screen flex items-center justify-center bg-[#1D1E22] overflow-hidden">
+  <div ref="root" class="relative w-full min-h-screen min-h-svh flex items-center justify-center bg-[#1D1E22] overflow-hidden">
 
     <div class="absolute inset-0 bg-[url('/images/bgcoris1.webp')] bg-cover bg-center opacity-5"></div>
     <!-- Vignette : assombrit les bords pour concentrer le regard sur le logo -->
     <div class="absolute inset-0 intro-vignette"></div>
 
-    <div class="relative z-10 flex flex-col items-center text-center px-6 py-16 w-full">
+    <div class="intro-content relative z-10 flex flex-col items-center text-center px-6 py-16 w-full">
       <p class="intro-item text-[#DD193A] font-semibold uppercase tracking-[0.35em] text-sm md:text-lg">Bienvenue au</p>
 
-      <div class="overflow-hidden w-full max-w-3xl mt-4">
-        <img src="/images/logo-festival.webp" alt="Vodun Days" class="intro-logo w-full" />
+      <div class="intro-logo-box overflow-hidden w-full max-w-3xl mt-4">
+        <img src="/images/logo-festival-grand.webp" alt="Vodun Days" width="1536" height="370" class="intro-logo w-full h-auto" />
       </div>
 
       <p class="intro-item font-display uppercase text-white text-xl md:text-3xl mt-6">Art, culture et spiritualité</p>
@@ -21,7 +21,7 @@
       </div>
 
       <p class="intro-item flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-white/80 mt-5 text-sm md:text-base">
-        <span class="flex items-center gap-2"><i class="ti ti-calendar-event text-[#FFBE00] text-lg"></i> 8, 9 et 10 janvier</span>
+        <span class="flex items-center gap-2"><i class="ti ti-calendar-event text-[#FFBE00] text-lg"></i> Du 2 au 9 janvier 2027</span>
         <span class="flex items-center gap-2"><i class="ti ti-map-pin text-[#FFBE00] text-lg"></i> Ouidah, Bénin</span>
       </p>
 
@@ -61,8 +61,8 @@ function onKeydown(e) {
 onMounted(() => {
   ctx = gsap.context(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
-    tl.from('.intro-logo', { opacity: 0, y: 200, duration: 1.6 })
-      .from('.intro-item', { opacity: 0, y: 20, duration: 0.6, stagger: 0.12 }, '-=0.8')
+    tl.from('.intro-logo', { opacity: 0, y: 200, duration: 1 })
+      .from('.intro-item', { opacity: 0, y: 20, duration: 0.5, stagger: 0.08 }, '-=0.6')
   }, root.value)
 
   window.addEventListener('keydown', onKeydown)
@@ -91,5 +91,23 @@ onBeforeUnmount(() => {
 
 .btn-glow {
   animation: glow 2s ease-in-out infinite;
+}
+
+/* Téléphone en paysage : tout doit tenir à l'écran, bouton « Entrer » compris */
+@media (max-height: 500px) {
+  .intro-content {
+    padding-block: 1rem;
+  }
+  .intro-logo-box {
+    max-width: 24rem;
+  }
+  .intro-content > * + * {
+    margin-top: 0.5rem;
+  }
+  .intro-content > .btn-glow {
+    margin-top: 0.75rem;
+    padding: 0.625rem 2rem;
+    font-size: 1rem;
+  }
 }
 </style>

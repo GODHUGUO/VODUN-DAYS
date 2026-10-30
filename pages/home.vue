@@ -2,7 +2,7 @@
   <div ref="root">
 
 <!-- -----------------herosection---------------- -->
-  <div class="relative h-screen bg-[url('/images/vd3.webp')] bg-cover bg-center -mt-[64px] overflow-hidden bg-fixed  containhero" >
+  <div class="relative h-screen h-svh bg-[url('/images/vd3.webp')] bg-cover bg-center -mt-[64px] overflow-hidden lg:bg-fixed  containhero" >
 
     <div class="absolute inset-0 bg-black/65"></div>
     <div class="absolute inset-0 bg-white overlay flex justify-center items-center z-50">
@@ -10,10 +10,10 @@
 </div>
 
 
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
-      <h1 class="text-5xl font-bold textacceuil overflow-hidden">VODUN DAYS</h1>
-      <p class="text-xl mt-4">Un évènement culturel béninois d'impact.</p>
-      <p class="text-xl mt-4 border px-2"> 8, 9 et 10 janvier à OUIDAH.</p>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full px-4 text-white text-center">
+      <h1 class="text-4xl min-[360px]:text-5xl font-bold textacceuil overflow-hidden">VODUN DAYS</h1>
+      <p class="text-lg sm:text-xl mt-4">Un évènement culturel béninois d'impact.</p>
+      <p class="text-lg sm:text-xl mt-4 border px-2"> Du 2 au 9 janvier 2027 à OUIDAH.</p>
     </div>
   </div>
 
@@ -38,7 +38,7 @@
     <div class="reveal">
       <SectionTitle eyebrow="L'événement" title="Qu'est-ce que le Vodun Days ?" />
       <p class="text-gray-700 text-lg leading-relaxed">
-        <strong class="text-[#1D1E22]">Vodun Days</strong>, initiative du président Patrice Talon, est une célébration culturelle et spirituelle organisée chaque 8, 9 et 10 janvier au Bénin.
+        <strong class="text-[#1D1E22]">Vodun Days</strong>, initiative du président Patrice Talon, est une célébration culturelle et spirituelle organisée chaque année en janvier au Bénin. La prochaine édition se tiendra du 2 au 9 janvier 2027.
       </p>
       <p class="text-gray-600 leading-relaxed mt-4">
         Intégré au Programme de Mise en Valeur du Patrimoine Culturel et Touristique, cet événement aujourd'hui reconnu à l'international trouve ses racines dans un long héritage historique et identitaire, avec <span class="text-[#DD193A] font-semibold">Ouidah</span> comme cœur battant.
@@ -49,7 +49,7 @@
       <div class="relative isolate">
         <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-[#FFBE00] rounded-2xl -z-10"></div>
         <div class="absolute -top-4 -right-4 w-20 h-20 bg-[#DD193A] rounded-2xl -z-10"></div>
-        <img src="/images/TALON.jpg" alt="Patrice Talon, initiateur du Vodun Days" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-xl" />
+        <img src="/images/TALON.webp" :srcset="srcsetOf('/images/TALON.webp', 1920)" sizes="(min-width: 768px) 50vw, 100vw" loading="lazy" alt="Patrice Talon, initiateur du Vodun Days" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-xl" />
       </div>
       <figcaption class="mt-8 text-sm text-gray-500 italic">Patrice Talon, initiateur du Vodun Days.</figcaption>
     </figure>
@@ -100,7 +100,7 @@
     </div>
 
     <div class="text-center mt-8 reveal">
-      <NuxtLink to="/festival" class="inline-flex items-center gap-2 font-semibold text-[#DD193A] hover:gap-3 transition-all">
+      <NuxtLink to="/festival" class="inline-flex items-center gap-2 py-2.5 font-semibold text-[#DD193A] hover:gap-3 transition-all">
         Découvrir le festival <i class="ti ti-arrow-right"></i>
       </NuxtLink>
     </div>
@@ -112,50 +112,16 @@
 <section class="bg-white py-12 md:py-16">
   <div class="max-w-6xl mx-auto px-6">
     <div class="reveal">
-      <SectionTitle eyebrow="Galerie" title="L'énergie du Vodun Days" center />
+      <SectionTitle
+        eyebrow="Galerie"
+        title="L'énergie du Vodun Days"
+        intro="Masques sacrés, cérémonies, danses et ferveur du public : plongez au cœur du Vodun Days à Ouidah."
+        center
+      />
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 auto-rows-[160px] md:auto-rows-[220px] gap-3 md:gap-4 reveal-group">
-      <button
-        v-for="(img, index) in gallery"
-        :key="img.src"
-        type="button"
-        :class="['group relative overflow-hidden rounded-2xl', img.span]"
-        :aria-label="`Agrandir : ${img.alt}`"
-        @click="openLightbox(index)"
-      >
-        <img :src="img.src" :alt="img.alt" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-end p-4">
-          <i class="ti ti-zoom-in text-white text-2xl"></i>
-        </div>
-      </button>
-    </div>
+    <PhotoGallery :gallery="vodunGallery" class="reveal" />
   </div>
-
-  <!-- Lightbox -->
-  <transition name="fade">
-    <div
-      v-if="activeIndex !== null"
-      class="fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-4"
-      @click.self="closeLightbox"
-    >
-      <button type="button" class="absolute top-4 right-4 text-white/80 hover:text-white text-3xl" aria-label="Fermer" @click="closeLightbox">
-        <i class="ti ti-x"></i>
-      </button>
-      <button type="button" class="absolute left-2 md:left-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl flex items-center justify-center" aria-label="Image précédente" @click="prevImage">
-        <i class="ti ti-chevron-left"></i>
-      </button>
-
-      <img :src="gallery[activeIndex].src" :alt="gallery[activeIndex].alt" class="max-h-[85vh] max-w-[85vw] rounded-xl shadow-2xl" />
-
-      <button type="button" class="absolute right-2 md:right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl flex items-center justify-center" aria-label="Image suivante" @click="nextImage">
-        <i class="ti ti-chevron-right"></i>
-      </button>
-      <p class="absolute bottom-4 inset-x-0 text-center text-sm text-white/70">
-        {{ activeIndex + 1 }} / {{ gallery.length }} · {{ gallery[activeIndex].alt }}
-      </p>
-    </div>
-  </transition>
 </section>
 
 
@@ -237,28 +203,38 @@
 <section class="bg-white py-12 md:py-16">
   <div class="max-w-6xl mx-auto px-6">
     <div class="reveal">
-      <SectionTitle eyebrow="Ils nous accompagnent" title="Partenaires officiels" center />
+      <SectionTitle
+        eyebrow="Ils soutiennent le festival"
+        title="Les partenaires officiels du Vodun Days"
+        intro="Les entreprises et les médias qui accompagnent l'organisation du Vodun Days."
+        center
+      />
     </div>
 
-    <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 reveal-group">
-      <div v-for="logo in partners" :key="logo.src" class="w-36 h-20 flex items-center justify-center">
-        <img :src="logo.src" :alt="logo.alt" class="max-w-full max-h-full object-contain" />
+    <div class="flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-10 gap-y-6 reveal-group">
+      <div v-for="logo in partners" :key="logo.src" class="w-[calc(50%-0.5rem)] sm:w-40 h-20 flex items-center justify-center">
+        <img :src="logo.src" :alt="logo.alt" loading="lazy" class="max-w-full max-h-full object-contain" />
       </div>
     </div>
 
-    <p class="text-center text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mt-10 mb-6">Partenaires médias</p>
-    <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 reveal-group">
-      <div v-for="logo in mediaPartners" :key="logo.src" class="w-28 h-20 flex items-center justify-center">
-        <img :src="logo.src" :alt="logo.alt" class="max-w-full max-h-full object-contain" />
+    <p class="text-center text-xs font-semibold uppercase tracking-[0.25em] text-gray-500 mt-10 mb-6">Partenaires médias</p>
+    <div class="flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-10 gap-y-6 reveal-group">
+      <div v-for="logo in mediaPartners" :key="logo.src" class="w-[calc(50%-0.5rem)] sm:w-32 h-16 flex items-center justify-center">
+        <img :src="logo.src" :alt="logo.alt" loading="lazy" class="max-w-full max-h-full object-contain" />
       </div>
     </div>
+
+    <p class="text-center text-xs text-gray-500 mt-10">
+      Source :
+      <a href="https://vodundays.bj/" target="_blank" rel="noopener" class="text-[#DD193A] hover:underline">vodundays.bj</a>
+    </p>
   </div>
 </section>
 
 
 <CtaBand
   title="Rendez-vous à Ouidah"
-  text="Chaque 8, 9 et 10 janvier, vivez le Vodun Days au cœur de la capitale spirituelle du Vodun."
+  text="Du 2 au 9 janvier 2027, vivez le Vodun Days au cœur de la capitale spirituelle du Vodun."
   :primary="{ label: 'Découvrir le festival', to: '/festival' }"
   :secondary="{ label: 'Découvrir Ouidah', to: '/ouidah' }"
 />
@@ -277,14 +253,14 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Vodun Days · 8, 9 et 10 janvier à Ouidah',
-  description: "Vodun Days, la célébration culturelle et spirituelle du Vodun, chaque 8, 9 et 10 janvier à Ouidah, au Bénin.",
+  title: 'Vodun Days · Du 2 au 9 janvier 2027 à Ouidah',
+  description: "Vodun Days, la célébration culturelle et spirituelle du Vodun, du 2 au 9 janvier 2027 à Ouidah, au Bénin.",
 })
 
 onMounted(() => {
   const tl = gsap.timeline({ease:"Power1.easeInOut"})
   tl.to(".overlay",{
-    duration:2,
+    duration:0.8,
     y:"100%"
   })
 })
@@ -295,7 +271,7 @@ const split = new SplitText(".textacceuil", { type: 'chars' }) // découpe en ca
 tl.from(split.chars, {
     opacity: 0,
     y: 70,
-    delay:1.5,
+    delay:0.4,
     stagger: {
       each:0.08,
       from:"edges"
@@ -312,10 +288,10 @@ const root = ref(null)
 useReveal(root)
 
 const keyInfos = [
-  { icon: 'ti-calendar-event', label: 'Dates', value: '8, 9 et 10 janvier' },
+  { icon: 'ti-calendar-event', label: 'Dates', value: 'Du 2 au 9 janvier 2027' },
   { icon: 'ti-map-pin', label: 'Lieu', value: 'Ouidah, Bénin' },
-  { icon: 'ti-building-arch', label: 'Scène principale', value: "L'Arène de Ouidah" },
-  { icon: 'ti-confetti', label: 'Au programme', value: '3 jours de célébration' },
+  { icon: 'ti-beach', label: 'Concerts', value: 'Sur la plage de Ouidah' },
+  { icon: 'ti-confetti', label: 'Au programme', value: '8 jours de célébration' },
 ]
 
 const objectives = [
@@ -331,17 +307,7 @@ const experiences = [
   { icon: 'ti-ripple', title: 'Le Dan, serpent sacré', text: "L'apparition du Dan, symbole de la continuité de la vie." },
   { icon: 'ti-beach', title: "Cérémonies face à l'océan", text: 'Des cérémonies sur la plage de la Porte du Non-Retour.' },
   { icon: 'ti-building-arch', title: 'La Grande Cérémonie Vodun', text: "Des festivités au sein de l'Arène de Ouidah, cœur battant du festival." },
-  { icon: 'ti-music', title: 'Concerts, saveurs et village', text: 'Concerts, performances artistiques, gastronomie locale et un village dédié aux festivités.' },
-]
-
-// span : place de chaque image dans la grille "bento"
-const gallery = [
-  { src: '/images/im2.jpg', alt: "Egungun dans l'Arène de Ouidah", span: 'col-span-2 row-span-2' },
-  { src: '/images/im1.jpg', alt: 'Danseuses aux visages peints', span: 'row-span-2' },
-  { src: '/images/im6.jpg', alt: 'Jeune fille parée de colliers de cauris', span: 'row-span-2' },
-  { src: '/images/im3.jpg', alt: "Tricycles aux couleurs du Vodun Days au pied du monument de l'Amazone", span: 'col-span-2' },
-  { src: '/images/im4.jpg', alt: 'La caravane brésilienne', span: '' },
-  { src: '/images/im5.jpg', alt: 'Danseuse de la caravane brésilienne', span: '' },
+  { icon: 'ti-music', title: 'Concerts, saveurs et village', text: 'Concerts, performances artistiques, gastronomie locale et le Village des Vodun Days, près de la Porte du Non-Retour.' },
 ]
 
 const timeline = [
@@ -349,7 +315,7 @@ const timeline = [
   { date: 'XVIIe – XVIIIe s.', title: 'Naissance du Vodun', text: "Il naît de la rencontre des cultes des dieux yorubas et des divinités des peuples Aja, Fon et Ewe, lors de l'expansion du royaume Fon d'Abomey." },
   { date: 'Traite négrière', title: 'La diaspora', text: "Avec la déportation d'Africains, le Vodun traverse l'Atlantique jusqu'aux Amériques et aux Caraïbes, notamment en Haïti. Interdit par les colons, il se pratique en secret." },
   { date: '1992', title: 'La reconnaissance', text: "L'État béninois reconnaît le Vodun comme religion officielle. À l'initiative du président Nicéphore Soglo, le 10 janvier devient la Journée nationale des religions traditionnelles." },
-  { date: "Aujourd'hui", title: 'Le Vodun Days', text: "Chaque 8, 9 et 10 janvier, Ouidah célèbre ce patrimoine vivant : fierté identitaire, retour aux racines et réconciliation avec l'histoire." },
+  { date: "Aujourd'hui", title: 'Le Vodun Days', text: "Chaque année en janvier, Ouidah célèbre ce patrimoine vivant : fierté identitaire, retour aux racines et réconciliation avec l'histoire." },
 ]
 
 const figures = [
@@ -359,68 +325,28 @@ const figures = [
   { name: 'Zangbeto', role: 'Les gardiens de la nuit', text: "Masques de raphia tourbillonnants, ils veillent traditionnellement à la sécurité et à l'ordre de la communauté." },
 ]
 
+// Partenaires affichés sur le site officiel vodundays.bj
 const partners = [
-  { src: '/images/celt.jpeg', alt: 'Celtiis' },
-  { src: '/images/A+BENIN.png', alt: 'A+ Bénin' },
-  { src: '/images/GDIZ.png', alt: 'GDIZ' },
-  { src: '/images/LOGO_LB.png', alt: 'La Béninoise' },
-  { src: '/images/sg.png', alt: 'Société Générale Bénin' },
+  { src: '/images/partenaires/celtiis.webp', alt: 'Celtiis' },
+  { src: '/images/partenaires/mtn.webp', alt: 'MTN' },
+  { src: '/images/partenaires/moov-africa.webp', alt: 'Moov Africa' },
+  { src: '/images/partenaires/societe-generale-benin.webp', alt: 'Société Générale Bénin' },
+  { src: '/images/partenaires/biic.webp', alt: "BIIC, Banque Internationale pour l'Industrie et le Commerce" },
+  { src: '/images/partenaires/air-cote-divoire.webp', alt: "Air Côte d'Ivoire" },
 ]
 
 const mediaPartners = [
-  { src: '/images/logo_TV5MONDE.jpg', alt: 'TV5MONDE' },
-  { src: '/images/F24.png', alt: 'France 24' },
-  { src: '/images/RFI.png', alt: 'RFI' },
-  { src: '/images/SRTB.png', alt: 'SRTB' },
+  { src: '/images/partenaires/srtb.webp', alt: 'SRTB' },
+  { src: '/images/partenaires/a-plus-benin.webp', alt: 'A+ Bénin' },
+  { src: '/images/partenaires/tv5monde.webp', alt: 'TV5MONDE' },
+  { src: '/images/partenaires/rfi-france24.webp', alt: 'RFI et France 24' },
+  { src: '/images/partenaires/le-media-positif.webp', alt: 'Le Média Positif' },
 ]
 
-
-// ---------- Lightbox ----------
-const activeIndex = ref(null)
-
-const openLightbox = (index) => {
-  activeIndex.value = index
-}
-
-const closeLightbox = () => {
-  activeIndex.value = null
-}
-
-const nextImage = () => {
-  activeIndex.value = (activeIndex.value + 1) % gallery.length
-}
-
-const prevImage = () => {
-  activeIndex.value = (activeIndex.value - 1 + gallery.length) % gallery.length
-}
-
-function onKeydown(e) {
-  if (activeIndex.value === null) return
-  if (e.key === 'Escape') closeLightbox()
-  if (e.key === 'ArrowRight') nextImage()
-  if (e.key === 'ArrowLeft') prevImage()
-}
-
-// Bloque le scroll de la page quand la lightbox est ouverte
-watch(activeIndex, (value) => {
-  document.body.style.overflow = value === null ? '' : 'hidden'
-})
-
-onMounted(() => window.addEventListener('keydown', onKeydown))
-onBeforeUnmount(() => {
-  window.removeEventListener('keydown', onKeydown)
-  document.body.style.overflow = ''
-})
 
 </script>
 
 <style scoped>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
-}
 summary::-webkit-details-marker {
   display: none;
 }
