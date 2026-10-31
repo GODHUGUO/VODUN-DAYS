@@ -3,6 +3,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/fonts'],
+  routeRules: {
+    // Images gardées 30 jours par le navigateur : une image remplacée doit changer de nom pour être vue tout de suite.
+    '/images/**': { headers: { 'cache-control': 'public, max-age=2592000' } },
+  },
   runtimeConfig: {
     public: {
       // Identifiant Google Analytics 4 (G-XXXXXXXXXX), ou variable d'environnement NUXT_PUBLIC_GA_ID.
