@@ -43,13 +43,11 @@
         >
           <transition :name="direction > 0 ? 'slide-next' : 'slide-prev'" mode="out-in">
             <div :key="photo.full" class="relative">
-              <!-- En fond, la version de la grille, souvent déjà en cache, le temps que la grande photo arrive -->
               <img
                 :src="photo.full"
                 :alt="description"
-                :style="{ backgroundImage: `url(${photo.md})` }"
                 draggable="false"
-                class="photo block select-none rounded-lg bg-cover shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]"
+                class="photo block select-none rounded-lg shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]"
               />
 
               <!-- Noms des artistes à la verticale, le long du bord gauche de la photo -->
@@ -129,7 +127,7 @@
 
 <script setup>
 const props = defineProps({
-  // Photos avec full, md, sm et title (texte alternatif), préparées par PhotoGallery
+  // Photos avec full, sm et title (texte alternatif), préparées par PhotoGallery
   photos: { type: Array, required: true },
   // Position de la photo affichée, null quand la visionneuse est fermée
   index: { type: Number, default: null },

@@ -28,26 +28,15 @@
         :aria-label="`Agrandir la photo : ${item.title}`"
         @click="activeIndex = index"
       >
-        <!-- Aperçu flou de quelques Ko, visible le temps que la photo arrive -->
-        <img
-          :src="item.sm"
-          alt=""
-          aria-hidden="true"
-          :style="item.focus ? { objectPosition: item.focus } : null"
-          loading="lazy"
-          decoding="async"
-          class="absolute inset-0 h-full w-full scale-110 object-cover blur-lg"
-        />
-        <!-- Tailles plafonnées à la largeur réelle des tuiles : la galerie ne dépasse pas 1104 px (max-w-6xl) -->
         <img
           :src="item.md"
           :srcset="`${item.md} 720w, ${item.full} 1440w`"
-          :sizes="shape(index) === 'tall' ? '(min-width: 768px) min(25vw, 264px), 50vw' : '(min-width: 768px) min(50vw, 544px), 100vw'"
+          :sizes="shape(index) === 'tall' ? '(min-width: 768px) 25vw, 50vw' : '(min-width: 768px) 50vw, 100vw'"
           :alt="item.title"
           :style="item.focus ? { objectPosition: item.focus } : null"
           loading="lazy"
           decoding="async"
-          class="relative h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
+          class="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
         />
 
         <!-- Voile et icône d'agrandissement au survol, sans légende -->
